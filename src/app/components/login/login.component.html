@@ -1,1 +1,60 @@
-<p>login works!</p>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="doLogin()" action="" method="POST">
+          <div class="form-group row">
+            <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail
+              Address</label>
+            <div class="col-md-6">
+              <input formControlName="email" type="text" id="email_address" class="form-control" name="email-address"
+                     [ngClass]="{'is-invalid': submitted && f.email.errors }" required autofocus>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+            <div class="col-md-6">
+              <input formControlName="password" type="password" id="password" class="form-control" name="password"
+                     [ngClass]="{'is-invalid': submitted && f.password.errors}" required>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right">Retype Password</label>
+            <div class="col-md-6">
+              <input formControlName="confirmPassword" type="password" id="match_password" class="form-control" name="matchPassword"
+                     [ngClass]="{'is-invalid': submitted && f.confirmPassword.errors}" required>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-6 offset-md-4">
+              <div class="checkbox">
+                <label>
+                  <input (click)="doReset()" type="checkbox" name="remember"> Remember Me
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 offset-md-4">
+            <button type="submit" class="btn btn-primary btn-login">
+              Login
+            </button>
+          </div>
+          <div class="col-md-6 offset-md-4">
+            <a href="#" class="btn btn-link">
+              Forgot password?
+            </a> -
+            <a href="register.html" class="btn btn-link">
+              Register
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
